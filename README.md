@@ -1,15 +1,13 @@
 # Portifolio
-Primeiro Projeto
 
+Primeiro Projeto
 ## Tarefas
 
 O controle das tarefas desse projeto será realizado no GitHub
-
-
 ## Icones
 
-:package: Nova funcionalidade
-:up: Atualização
-:beetle: Correção de bug
-:checkered_flag: release
+- :package: Nova funcionalidade
+- :up: Atualização
+- :beetle: Correção de bug
+- :checkered_flag: release
 

@@ -1,12 +1,84 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Barlow:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,500&family=Exo:wght@300;400;500&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,800;1,200;1,300;1,600&family=Oswald:wght@200;300;500;700&family=Raleway:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,500&family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Barlow:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,500&family=Exo:wght@300;400;500&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,800;1,200;1,300;1,600&family=Oswald:wght@200;300;500;700&family=Raleway:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,500&family=Roboto+Condensed:wght@300&display=swap");
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
 
 * {
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+:root{
+    --font-primary:'Exo', cursive;
+    --font-secundary: 'Raleway', sans-serif;
+    --font-action: "Mulish", serif;
 }
 
+
+.hamburguer{
+    /*background-color: rgb(255, 0, 0);*/
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+.show-menu .hamburguer {
+    right: 16rem;
+
+
+}
+.line{
+    width: 100%;
+    height: .1rem;
+    background-color: #fff;
+    box-shadow: 0.1rem 0.1rem 1px black;
+    transition: transform 1s;
+}
+.show-menu #line1 {
+   transform: rotate(45deg) translate(.3rem, .45rem);
+}
+
+.show-menu #line2{
+    opacity: 0;
+    visibility: hidden;
+}
+.show-menu #line3 {
+    transform: rotate(-45deg) translate(.3rem, -.45rem);
+}
+
+.hamburguer span{
+    position: absolute;
+    left: 3rem;
+    height: 2rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #006494;
+    font-family: var(--font-action);
+    color: #fff;
+    opacity: 0;
+}
+.hamburguer span::before {
+    content: "" ;
+    position: absolute;
+    border-right: .5rem solid #006494 ;
+    border-top: .5rem solid transparent ;
+    border-left: .5rem solid transparent ;
+    border-bottom: .5rem solid transparent ;
+    left: -1rem;
+}
+
+.show-menu .hamburguer:hover span{
+    opacity: 1;
+
+}
 header {
     width: 100%;
     height: 100vh;
@@ -46,7 +118,7 @@ header {
 .banner h1 {
     color: #ffffff;
     font-size: 3.5rem;
-    font-family: 'Exo', cursive;
+    font-family: var(--font-primary);
     font-weight: 600;
     text-shadow: .2rem .3rem 2px rgba(0, 0, 0, 0.4);
     line-height: 3.5rem;
@@ -57,7 +129,7 @@ header {
 }
 
 .banner p {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--font-secundary);
     font-weight: 200;
     text-transform: uppercase;
     color: #fff;
@@ -71,13 +143,13 @@ header {
 }
 
 .banner button {
-    font-family: "Mulish", serif;
+    font-family: var(--font-action);
     color: rgb(255, 255, 255);
     text-transform: uppercase;
     letter-spacing: .1rem;
-    background: #6a3093;   
-    background: -webkit-linear-gradient(to right, #a044ff, #6a3093);
-    background: linear-gradient(to left,  #a044ff, #6a3093);
+    background: #13293d;   
+    background: -webkit-linear-gradient(to right, #13293d, #006494);
+    background: linear-gradient(to right,  #13293d, #006494);
     padding: 1rem 3rem;
     border: none;
     border-radius: 5px;
@@ -102,4 +174,62 @@ header {
     
 }
 
+.sidebar{
+    width: 20rem;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: -20rem;
+    transition: all 1s;
+}
+
+.show-menu .sidebar {
+    right: 0;
+
+}
+
+.menu{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu-item{
+    text-align: center;
+    margin-bottom: .3rem;
+}
+.menu-link{
+    font-family: var(--font-action);
+    font-size: 2rem;
+    color: #555;
+    font-weight: 500;
+    transition: color 1s;
+}
+.menu-link:hover{
+    color: #006494 ;
+}
+.social-media{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.social-media i{
+    background-color: #13293d;
+    color: rgb(255, 255, 255) ;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 1s;
+}
+.social-media i:hover{
+    background-color: #006494;
+}
 
